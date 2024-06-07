@@ -58,6 +58,7 @@ input{
   background: hsl(223, 87%, 63%);
   color: hsl(0, 0%, 100%);
   font-weight: 700;
+  cursor: pointer;
 }
 
 .dashboard img{
