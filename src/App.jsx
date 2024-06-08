@@ -1,9 +1,25 @@
+import { useState } from 'react'
 import logo from '../images/logo.svg'
 import dashboard from '../images/illustration-dashboard.png'
 import Footer from './Footer'
 
 
 function App() {
+  const [error, setError] = useState()
+  const [type, setType] = useState('')
+
+  
+  const handleOnChange = (e) =>{
+    const inputItem = e.target.value;
+    setType(inputItem)
+    
+  }
+
+  const onSubmit = ()=>{
+    if(type == ''){
+      setError('please provide your email')
+    }
+  }
 
   return (
     <>
@@ -16,8 +32,14 @@ function App() {
       <div className="submit">
         <input type="text"
         placeholder='your email address...'
+        onChange={(e)=>handleOnChange(e)}
          />
-         <button className='btn'>Notify Me</button>
+         <p style={{color:'red',
+          fontStyle:'italic',
+          fontSize: '.8rem',
+          marginTop: '5px'
+         }}>{error}</p>
+         <button className='btn' onClick={onSubmit}>Notify Me</button>
       </div>
       <div className="dashboard">
       <img src={dashboard} alt="dashboard-image" />
