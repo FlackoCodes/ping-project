@@ -8,7 +8,6 @@ function App() {
   const [error, setError] = useState()
   const [type, setType] = useState('')
 
-  
   const handleOnChange = (e) =>{
     const inputItem = e.target.value;
     setType(inputItem)
@@ -30,15 +29,18 @@ function App() {
         <p>Subscribe and get notified</p>
       </div>
       <div className="submit">
-        <input type="text"
-        placeholder='your email address...'
-        onChange={(e)=>handleOnChange(e)}
-         />
-         <p style={{color:'red',
-          fontStyle:'italic',
-          fontSize: '.8rem',
-          marginTop: '5px'
-         }}>{error}</p>
+        <div>
+          <input type="text"
+          placeholder='your email address...'
+          onChange={(e)=>handleOnChange(e)}
+           />
+           <p style={{color:'red',
+            fontStyle:'italic',
+            fontSize: '.8rem',
+            // marginTop: '5px'
+           }}>{error}
+           </p>
+        </div>
          <button className='btn' onClick={onSubmit}>Notify Me</button>
       </div>
       <div className="dashboard">
