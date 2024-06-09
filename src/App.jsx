@@ -34,14 +34,18 @@ function App() {
           placeholder='your email address...'
           onChange={(e)=>handleOnChange(e)}
            />
-           <p style={{color:'red',
-            fontStyle:'italic',
-            fontSize: '.8rem',
-            // marginTop: '5px'
-           }}>{error}
-           </p>
+           <div>
+             <p style={{color:'red',
+              fontStyle:'italic',
+              fontSize: '.8rem',
+              marginTop: '5px'
+             }}>{error}
+             </p>
+           </div>
         </div>
-         <button className='btn' onClick={onSubmit}>Notify Me</button>
+         <div>
+          <button className='btn' onClick={onSubmit}>Notify Me</button>
+          </div>
       </div>
       <div className="dashboard">
       <img src={dashboard} alt="dashboard-image" />
