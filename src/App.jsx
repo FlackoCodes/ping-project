@@ -5,6 +5,9 @@ import Footer from './Footer'
 
 
 function App() {
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
   const [error, setError] = useState()
   const [type, setType] = useState('')
 
@@ -17,6 +20,8 @@ function App() {
   const onSubmit = ()=>{
     if(type == ''){
       setError('please provide your email')
+    } else if(!emailRegex.test(type)){
+      setError('please provide a valid email')
     }
   }
 
