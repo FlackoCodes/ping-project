@@ -11,10 +11,10 @@ function App() {
   const [error, setError] = useState()
   const [type, setType] = useState('')
 
+  console.log(error);
   const handleOnChange = (e) =>{
     const inputItem = e.target.value;
     setType(inputItem)
-    
   }
 
   const onSubmit = ()=>{
